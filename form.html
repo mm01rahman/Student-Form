@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+  <main class="mx-auto max-w-4xl px-4 py-8 space-y-8">
+
+    <section class="bg-white rounded-2xl shadow-sm ring-1 ring-slate-200">
+      <div class="p-6 md:p-8">
+        <h2 class="text-xl font-semibold mb-4">Add New Entry</h2>
+
+        <form id="entryForm" class="grid gap-4 md:grid-cols-2">
+
+          <div>
+            <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
+            <input id="name" name="name" type="text" required placeholder="enter your name here"
+                   class="mt-1 w-full rounded-xl border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+          </div>
+
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com"
+                   class="mt-1 w-full rounded-xl border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+          </div>
+
+
+          <div>
+            <label for="studentId" class="block text-sm font-medium text-slate-700">Student ID</label>
+            <input id="studentId" name="studentId" type="text" required placeholder="213-134-xxx"
+                   class="mt-1 w-full rounded-xl border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+          </div>
+
+
+          <div>
+            <label for="batch" class="block text-sm font-medium text-slate-700">Batch</label>
+            <select id="batch" name="batch" required
+                    class="mt-1 w-full rounded-xl border-slate-300 bg-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+              <option value="">Select your batch</option>
+              <option>1st</option><option>2nd</option><option>3rd</option><option>4th</option><option>5th</option>
+              <option>6th</option><option>7th</option><option>8th</option><option>9th</option>
+            </select>
+          </div>
+
+
+          <div class="md:col-span-2 flex gap-2 justify-end">
+            <button type="reset" class="rounded-xl border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-50">Clear</button>
+            <button type="submit" class="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Save</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
+    <section class="bg-white rounded-2xl shadow-sm ring-1 ring-slate-200">
+      <div class="p-6 md:p-8">
+        <h2 class="text-xl font-semibold mb-4">Student Data Table</h2>
+        <div class="overflow-x-auto rounded-xl ring-1 ring-slate-200">
+          <table class="min-w-full divide-y divide-slate-200">
+            <thead class="bg-slate-50">
+              <tr class="text-left text-xs font-semibold uppercase tracking-wider text-slate-600">
+                <th class="px-4 py-3">#</th>
+                <th class="px-4 py-3">Name</th>
+                <th class="px-4 py-3">Email</th>
+                <th class="px-4 py-3">ID</th>
+                <th class="px-4 py-3">Batch</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody" class="divide-y divide-slate-100 bg-white"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script src="./form.js" defer></script>
+</body>
+</html>
